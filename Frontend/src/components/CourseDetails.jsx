@@ -17,7 +17,7 @@ function CourseDetails() {
 
   const fetchCourseDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/courses/${id}`);
+      const response = await axios.get(`https://bisugen.onrender.com/api/courses/${id}`);
       setCourse(response.data);
       setLoading(false);
     } catch (err) {
@@ -29,7 +29,7 @@ function CourseDetails() {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this course?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/courses/${id}`, {
+        await axios.delete(`https://bisugen.onrender.com/api/courses/${id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`
           }
