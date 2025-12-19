@@ -14,7 +14,6 @@ body {
   min-height: 100vh;
 }
 
-/* Header Styles */
 .header {
   background-color: #2c3e50;
   color: white;
@@ -61,15 +60,11 @@ body {
 .logout-btn:hover {
   background-color: #c0392b;
 }
-
-/* Container */
 .container {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
-
-/* Form Styles */
 .form-container {
   max-width: 400px;
   margin: 3rem auto;
@@ -142,7 +137,6 @@ body {
   text-decoration: underline;
 }
 
-/* Course List */
 .course-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -181,7 +175,6 @@ body {
   font-weight: bold;
 }
 
-/* Course Details */
 .course-details {
   background: white;
   padding: 2rem;
@@ -241,7 +234,6 @@ body {
   background-color: #7f8c8d;
 }
 
-/* Error Message */
 .error-message {
   background-color: #fee;
   color: #c33;
@@ -261,7 +253,6 @@ body {
   text-align: center;
 }
 
-/* Loading */
 .loading {
   text-align: center;
   padding: 2rem;
@@ -269,7 +260,6 @@ body {
   color: #666;
 }
 
-/* Empty state */
 .empty-state {
   text-align: center;
   padding: 3rem;
