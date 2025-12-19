@@ -1,16 +1,10 @@
 const Course = require('../models/Course');
-
-// Create new course (Admin only)
 const createCourse = async (req, res) => {
   try {
     const { title, description, price } = req.body;
-
-    // Validate input
     if (!title || !description || !price) {
       return res.status(400).json({ message: 'Please provide all fields' });
     }
-
-    // Create course
     const course = await Course.create({
       title,
       description,
@@ -23,8 +17,6 @@ const createCourse = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
-
-// Get all courses (Public)
 const getAllCourses = async (req, res) => {
   try {
     const courses = await Course.find().populate('createdBy', 'name email').sort({ createdAt: -1 });
@@ -33,8 +25,6 @@ const getAllCourses = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
-
-// Get single course by ID (Public)
 const getCourseById = async (req, res) => {
   try {
     const course = await Course.findById(req.params.id).populate('createdBy', 'name email');
@@ -48,8 +38,6 @@ const getCourseById = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
-
-// Delete course (Admin only)
 const deleteCourse = async (req, res) => {
   try {
     const course = await Course.findById(req.params.id);
