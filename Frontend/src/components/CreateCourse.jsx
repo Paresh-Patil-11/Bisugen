@@ -32,7 +32,7 @@ function CreateCourse({ user }) {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/courses', formData, {
+      await axios.post('https://bisugen.onrender.com/api/courses', formData, {
         headers: {
           Authorization: `Bearer ${user.token}`
         }
