@@ -26,7 +26,7 @@ function Signup() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/users/register', formData);
+      const response = await axios.post('https://bisugen.onrender.com/api/users/register', formData);
       console.log('Signup successful:', response.data);
       alert('Registration successful! Please login.');
       navigate('/login');
