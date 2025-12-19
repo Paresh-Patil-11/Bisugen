@@ -7,7 +7,10 @@ const userRoutes = require('./routes/userRoutes');
 const courseRoutes = require('./routes/courseRoutes');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ['https://bisugen-dev.onrender.com', 'http://localhost:5173'],
+  credentials: true
+}));
 app.use(express.json());
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
