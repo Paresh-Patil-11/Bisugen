@@ -14,7 +14,7 @@ function CourseList({ user }) {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/courses');
+      const response = await axios.get('https://bisugen.onrender.com/api/courses');
       setCourses(response.data);
       setLoading(false);
     } catch (err) {
