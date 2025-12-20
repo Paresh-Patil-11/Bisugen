@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from './api';
 
 function CreateCourse({ user }) {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ function CreateCourse({ user }) {
     }
 
     try {
-      await axios.post('https://bisugen.onrender.com/api/courses', formData, {
+      await axios.post(`${API_URL}/api/courses`, formData, {
         headers: {
           Authorization: `Bearer ${user.token}`
         }
