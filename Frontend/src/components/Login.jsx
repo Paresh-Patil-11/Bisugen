@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from './api';
 
 function Login({ setUser }) {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Login({ setUser }) {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://bisugen.onrender.com/api/users/login', formData);
+      const response = await axios.post(`${API_URL}/api/users/login`, formData);
       const userData = response.data;
       
       // Store user data in localStorage
