@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from './api';
 
 function Signup() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ function Signup() {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://bisugen.onrender.com/api/users/register', formData);
+      const response = await axios.post(`${API_URL}/api/users/register`, formData);
       console.log('Signup successful:', response.data);
       alert('Registration successful! Please login.');
       navigate('/login');
