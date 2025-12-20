@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from './api';
 
 function CourseList({ user }) {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function CourseList({ user }) {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get('https://bisugen.onrender.com/api/courses');
+      const response = await axios.get(`${API_URL}/api/courses`);
       setCourses(response.data);
       setLoading(false);
     } catch (err) {
