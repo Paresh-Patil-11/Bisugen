@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from './api';
 
 function CourseDetails() {
   const { id } = useParams();
@@ -17,7 +18,7 @@ function CourseDetails() {
 
   const fetchCourseDetails = async () => {
     try {
-      const response = await axios.get(`https://bisugen.onrender.com/api/courses/${id}`);
+      const response = await axios.get(`${API_URL}/api/courses/${id}`);
       setCourse(response.data);
       setLoading(false);
     } catch (err) {
@@ -29,7 +30,7 @@ function CourseDetails() {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this course?')) {
       try {
-        await axios.delete(`https://bisugen.onrender.com/api/courses/${id}`, {
+        await axios.delete(`${API_URL}/api/courses/${id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`
           }
